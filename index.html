@@ -1,0 +1,190 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Science Course in Pune</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .header {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background: url('./image/background.jpg') no-repeat center center/cover;
+            color: white;
+        }
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 40px;
+            position: relative;
+            z-index: 2;
+        }
+        .nav .logo {
+            display: flex;
+            align-items: center;
+        }
+        .nav .logo img {
+            height: 40px;
+            margin-left: 75px;
+        }
+        .nav .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .nav .nav-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .nav .nav-links .special-button {
+            background-color: white;
+            color: black;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .nav .nav-links .special-button:hover {
+            background-color: lightgray;
+        }
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            text-align: left;
+            z-index: 1;
+            transition: top 0.3s ease;
+        }
+        .content h1 {
+            font-size: 3em;
+            margin: 0px;
+            color: #37B7C3;
+        }
+        .content h3 {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        .buttons {
+            margin-top: 60px;
+        }
+        .buttons a {
+            padding: 15px 25px;
+            margin: 0 10px;
+            border: none;
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .whatsapp {
+            background-color: green;
+        }
+        .whatsapp:hover {
+            background-color: darkgreen;
+        }
+        .enroll {
+            background-color: blue;
+        }
+        .enroll:hover {
+            background-color: darkblue;
+        }
+        @media (max-width: 768px) {
+            .nav .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: black;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+            .nav .nav-links a {
+                margin: 15px 0;
+                padding: 10px 0;
+                text-align: center;
+                width: 100%;
+            }
+            .nav .nav-links .special-button {
+                margin: 15px;
+            }
+            .hamburger {
+                display: flex;
+            }
+            .nav.active .nav-links {
+                display: flex;
+            }
+            .content {
+                top: calc(60px + 15px); /* Adjust based on the navbar height and spacing */
+                transform: none;
+            }
+            .content h1 {
+                font-size: 2em;
+            }
+            .buttons a {
+                padding: 10px 15px;
+                font-size: 0.8em;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <div class="logo">
+                <img src="./image/DSCIP LOGO.png" alt="Logo">
+            </div>
+            <div class="hamburger" onclick="toggleMenu()">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Gallery</a>
+                <a href="#">Course</a>
+                <a href="#">Blog</a>
+                <a href="#">Contact</a>
+                <a href="#" class="special-button">Syllabus</a>
+            </div>
+        </div>
+        <div class="content">
+            <h1>Data Science Course in Pune</h1>
+            <h3>On Job Training With Live Projects</h3>
+            <div class="buttons">
+                <a href="#" class="whatsapp">Whats App</a>
+                <a href="#" class="enroll">Enroll Now</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav').classList.toggle('active');
+            const content = document.querySelector('.content');
+            if (document.querySelector('.nav').classList.contains('active')) {
+                content.style.top = 'calc(100vh - ' + document.querySelector('.nav-links').offsetHeight + 'px)';
+            } else {
+                content.style.top = '50%';
+            }
+        }
+    </script>
+</body>
+</html>
